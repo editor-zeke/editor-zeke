@@ -17,7 +17,7 @@ import { Play, Mail, Menu, X, Monitor, Users } from 'lucide-react';
 const CONFIG = {
     // --- ESTADO DE DISPONIBILIDAD ---
     estado: {
-        plazas: 0, // <-- ¡CAMBIA ESTE NÚMERO! Si es > 0, está disponible. Si es 0, está ocupado.
+        plazas: 40, // <-- ¡CAMBIA ESTE NÚMERO! Si es > 0, está disponible. Si es 0, está ocupado.
         // Nota: El texto de "Cupos disponibles" ahora es automático en la sección Hero.
         textoNoDisponible: "Agenda Cerrada Temporalmente"
     },
