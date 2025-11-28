@@ -17,7 +17,7 @@ import { Play, Mail, Menu, X, Monitor, Users } from 'lucide-react';
 const CONFIG = {
     // --- ESTADO DE DISPONIBILIDAD ---
     estado: {
-        plazas: 3, // <-- ¡CAMBIA ESTE NÚMERO! Si es > 0, está disponible. Si es 0, está ocupado.
+        plazas: 0, // <-- ¡CAMBIA ESTE NÚMERO! Si es > 0, está disponible. Si es 0, está ocupado.
         // Nota: El texto de "Cupos disponibles" ahora es automático en la sección Hero.
         textoNoDisponible: "Agenda Cerrada Temporalmente"
     },
@@ -218,8 +218,8 @@ const BarraNavegacion = () => {
             {/* Menú Desplegable Móvil (Animado Entrada/Salida) */}
             <div
                 className={`md:hidden absolute top-full left-0 w-full bg-black border-b border-white/10 transition-all duration-300 ease-in-out transform origin-top -z-10 ${isMenuOpen
-                        ? 'opacity-100 translate-y-0 visible'
-                        : 'opacity-0 -translate-y-4 invisible'
+                    ? 'opacity-100 translate-y-0 visible'
+                    : 'opacity-0 -translate-y-4 invisible'
                     }`}
             >
                 <div className="px-4 pt-4 pb-8 space-y-4 flex flex-col items-center">
