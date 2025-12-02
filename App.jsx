@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Play, Mail, Menu, X, Monitor, Users } from 'lucide-react';
+import { Play, Mail, Menu, X, Monitor, Users, Home, Briefcase, Phone, BookOpen, Clapperboard, Star, ChevronDown, ChevronUp, Instagram } from 'lucide-react';
 
 /* ==================================================================================
    1. PANEL DE CONTROL (CONFIGURACIÓN EDITABLE)
@@ -17,7 +17,7 @@ import { Play, Mail, Menu, X, Monitor, Users } from 'lucide-react';
 const CONFIG = {
     // --- ESTADO DE DISPONIBILIDAD ---
     estado: {
-        plazas: 40, // <-- ¡CAMBIA ESTE NÚMERO! Si es > 0, está disponible. Si es 0, está ocupado.
+        plazas: 2, // <-- ¡CAMBIA ESTE NÚMERO! Si es > 0, está disponible. Si es 0, está ocupado.
         // Nota: El texto de "Cupos disponibles" ahora es automático en la sección Hero.
         textoNoDisponible: "Agenda Cerrada Temporalmente"
     },
@@ -75,52 +75,132 @@ const CONFIG = {
     -------------------------------------------------------------------------- */
     trabajos: [
         {
+            id: 9,
+            titulo: "Jetcars 🌊",
+            categoria: "anuncios",
+            imagen: "../img/jetcars.png",
+            vistas: "1k+ Vistas",
+            videoUrl: "https://player.vimeo.com/video/1141748076",
+            esVertical: true,
+            esNuevo: true
+        },
+        {
             id: 1,
             titulo: "Chilli Restaurant",
-            categoria: "blogs",
-            imagen: "SCR-20251127-pbpm.jpg",
-            vistas: "1.2M Vistas",
+            categoria: "anuncios",
+            imagen: "../img/chilishack.png",
+            vistas: "200k+ Vistas",
             videoUrl: "https://player.vimeo.com/video/1141238978",
-            esVertical: true // Ejemplo: Este se verá alto en el celular
+            esVertical: true, // Ejemplo: Este se verá alto en el celular
+            esNuevo: true
         },
         {
             id: 2,
-            titulo: "Storytelling Emotivo",
-            categoria: "marca_personal",
-            imagen: "https://images.unsplash.com/photo-1531297461136-82lwDe43zsR?q=80&w=1470&auto=format&fit=crop",
-            vistas: "850k Vistas",
-            videoUrl: "https://player.vimeo.com/video/1141238978",
-            esVertical: false // Video horizontal normal
+            titulo: "Maleta o mochila",
+            categoria: "blogs",
+            imagen: "../img/maleta-mochi.png",
+            vistas: "500+ Vistas",
+            videoUrl: "https://player.vimeo.com/video/1136235770",
+            esVertical: true,
         },
         {
             id: 3,
-            titulo: "Documental Viajes",
-            categoria: "videos_largos",
-            imagen: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1000&auto=format&fit=crop",
-            vistas: "45k Vistas"
+            titulo: "Esenciales de Viaje",
+            categoria: "blogs",
+            imagen: "../img/esenciales.png",
+            vistas: "700+ Vistas",
+            videoUrl: "https://player.vimeo.com/video/1136235862",
+            esVertical: true
         },
         {
             id: 4,
-            titulo: "Anuncio E-commerce",
+            titulo: "3 Cosas que debes tener listo",
             categoria: "marca_personal",
-            imagen: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1632&auto=format&fit=crop",
-            vistas: "2.5M Vistas"
+            imagen: "../img/3-cosas.png",
+            vistas: "105+ Vistas",
+            esVertical: true,
+            videoUrl: "https://player.vimeo.com/video/1130355484"
         },
         {
             id: 5,
-            titulo: "Vlog Diario CEO",
+            titulo: "Estabilidad VS Libertad",
             categoria: "marca_personal",
-            imagen: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1000&auto=format&fit=crop",
+            imagen: "../img/estabilidad-libertad.png",
             vistas: "120k Vistas",
-            esVertical: true // Ejemplo Vertical
+            esVertical: true,
+            videoUrl: "https://player.vimeo.com/video/1120273287"
         },
         {
             id: 6,
-            titulo: "Review Tech Deep-Dive",
+            titulo: "Como conseguir clientes?",
             categoria: "videos_largos",
-            imagen: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?q=80&w=1470&auto=format&fit=crop",
-            vistas: "300k Vistas"
+            imagen: "../img/clientes.png",
+            vistas: "300k Vistas",
+            videoUrl: "https://player.vimeo.com/video/1118611689"
         },
+        {
+            id: 7,
+            titulo: "Un diploma vale menos que saber vender",
+            categoria: "marca_personal",
+            imagen: "../img/diploma.png",
+            vistas: "300k Vistas",
+            videoUrl: "https://player.vimeo.com/video/1120256955",
+            esVertical: true,
+        },
+        {
+            id: 8,
+            titulo: "My experiencia en el Babaro Palas",
+            categoria: "blogs",
+            imagen: "../img/babaro-palas.png",
+            vistas: "1k+ Vistas",
+            videoUrl: "https://player.vimeo.com/video/1118613666",
+            esVertical: true,
+        }
+    ],
+    // --- TESTIMONIOS ---
+    testimonios: [
+        {
+            id: 1,
+            nombre: "Nathanael Santiago Vasquez",
+            rol: "Influencer de Viajes",
+            foto: "../img/tes-natha.png",
+            texto: "muy bueno",
+            instagram: "https://www.instagram.com/_gopassport/" // Pega aquí el link de Instagram
+        },
+        
+    ],
+    // --- PREGUNTAS FRECUENTES (FAQ) ---
+    faq: [
+        {
+            id: 1,
+            pregunta: "¿Cuánto tiempo tardas en entregar un video?",
+            respuesta: "Depende de la complejidad del proyecto. Para videos cortos (Reels/TikToks), suelo entregar resultados entre 48-72 horas. Proyectos más largos o complejos pueden tomar de 3 a 5 días hábiles."
+        },
+        {
+            id: 2,
+            pregunta: "¿Incluyes revisiones en el servicio?",
+            respuesta: "Sí, absolutamente. Todos mis paquetes incluyen hasta 2 rondas de revisiones gratuitas para asegurar que el resultado final sea exactamente lo que buscas y quedes 100% satisfecho."
+        },
+        {
+            id: 3,
+            pregunta: "¿Qué necesito para empezar a trabajar contigo?",
+            respuesta: "Solo necesito el material en crudo (raw footage) en la mejor calidad posible y, si tienes, referencias o una idea clara del estilo que deseas. Si no tienes idea, ¡yo te ayudo a definirla!"
+        },
+        {
+            id: 4,
+            pregunta: "¿Ofreces paquetes mensuales o por volumen?",
+            respuesta: "Sí. Si necesitas varios videos al mes, puedo ofrecerte tarifas especiales y paquetes personalizados para creadores, marcas y empresas."
+        },
+        {
+            id: 5,
+            pregunta: "¿Qué métodos de pago aceptas?",
+            respuesta: "Acepto pagos por PayPal, BanReservas y Qik. Si tienes otro método de pago que te resulte más cómodo, podemos conversarlo y adaptarnos sin problema."
+        },
+        {
+            id: 6,
+            pregunta: "¿Puedo pedir un estilo de edición específico?",
+            respuesta: "Por supuesto. Solo envíame ejemplos y puedo adaptarme al estilo que buscas: moderno, rápido, minimalista, cinematográfico, etc."
+        }
     ]
 };
 
@@ -132,6 +212,22 @@ const CONFIG = {
 const WhatsAppIcon = ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className={className}><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" /></svg>
 );
+
+// --- COMPONENTE LINK INSTAGRAM ---
+const InstagramLink = ({ url }) => {
+    if (!url) return null;
+    return (
+        <a
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1 text-gray-400 hover:text-pink-500 transition-colors text-xs mb-4"
+        >
+            <Instagram size={14} />
+            <span>Ver Instagram</span>
+        </a>
+    );
+};
 
 // --- COMPONENTE DE ANIMACIÓN (REVEAL ON SCROLL) ---
 const RevealSection = ({ children, className = "" }) => {
@@ -192,13 +288,22 @@ const BarraNavegacion = () => {
                     </div>
 
                     {/* Menú PC */}
-                    <div className="hidden md:flex space-x-8 items-center">
-                        <a href="#inicio" className="text-gray-300 hover:text-yellow-400 transition-colors text-sm uppercase tracking-widest">Inicio</a>
-                        <a href="#portafolio" className="text-gray-300 hover:text-yellow-400 transition-colors text-sm uppercase tracking-widest">Trabajos</a>
-                        <a href="#contacto" className="text-gray-300 hover:text-yellow-400 transition-colors text-sm uppercase tracking-widest">Contacto</a>
+                    <div className="hidden lg:flex space-x-8 items-center">
+                        <a href="#inicio" className="text-gray-300 hover:text-yellow-400 transition-colors text-sm uppercase tracking-widest flex items-center gap-2">
+                            <Home size={16} /> Inicio
+                        </a>
+                        <a href="#portafolio" className="text-gray-300 hover:text-yellow-400 transition-colors text-sm uppercase tracking-widest flex items-center gap-2">
+                            <Briefcase size={16} /> Trabajos
+                        </a>
+                        <a href="#contacto" className="text-gray-300 hover:text-yellow-400 transition-colors text-sm uppercase tracking-widest flex items-center gap-2">
+                            <Phone size={16} /> Contacto
+                        </a>
+                        <a href="https://www.instagram.com/visual_productions810/" target="_blank" rel="noreferrer" className="text-gray-300 hover:text-yellow-400 transition-colors text-sm uppercase tracking-widest flex items-center gap-2">
+                            <Clapperboard size={16} /> Agencia de Video
+                        </a>
 
-                        <a href={CONFIG.personal.blog} target="_blank" rel="noreferrer" className="text-gray-300 hover:text-yellow-400 transition-colors text-sm uppercase tracking-widest">
-                            Blog Personal
+                        <a href={CONFIG.personal.blog} target="_blank" rel="noreferrer" className="text-gray-300 hover:text-yellow-400 transition-colors text-sm uppercase tracking-widest flex items-center gap-2">
+                            <BookOpen size={16} /> Blog Personal
                         </a>
 
                         <a href={`https://wa.me/${CONFIG.personal.whatsapp}`} target="_blank" rel="noreferrer" className="px-6 py-2 bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/30 text-white transition-all rounded-full text-sm font-bold flex items-center gap-2">
@@ -207,7 +312,7 @@ const BarraNavegacion = () => {
                     </div>
 
                     {/* Botón Menú Móvil */}
-                    <div className="md:hidden">
+                    <div className="lg:hidden">
                         <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white p-2">
                             {isMenuOpen ? <X /> : <Menu />}
                         </button>
@@ -217,16 +322,17 @@ const BarraNavegacion = () => {
 
             {/* Menú Desplegable Móvil (Animado Entrada/Salida) */}
             <div
-                className={`md:hidden absolute top-full left-0 w-full bg-black border-b border-white/10 transition-all duration-300 ease-in-out transform origin-top -z-10 ${isMenuOpen
+                className={`lg:hidden absolute top-full left-0 w-full bg-black border-b border-white/10 transition-all duration-300 ease-in-out transform origin-top -z-10 ${isMenuOpen
                     ? 'opacity-100 translate-y-0 visible'
                     : 'opacity-0 -translate-y-4 invisible'
                     }`}
             >
                 <div className="px-4 pt-4 pb-8 space-y-4 flex flex-col items-center">
-                    <a href="#inicio" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-white hover:text-yellow-500 text-lg">Inicio</a>
-                    <a href="#portafolio" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-white hover:text-yellow-500 text-lg">Portafolio</a>
-                    <a href="#contacto" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-white hover:text-yellow-500 text-lg">Contacto</a>
-                    <a href={CONFIG.personal.blog} target="_blank" rel="noreferrer" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 text-white hover:text-yellow-500 text-lg">Blog Personal</a>
+                    <a href="#inicio" onClick={() => setIsMenuOpen(false)} className="px-3 py-2 text-white hover:text-yellow-500 text-lg flex items-center gap-2"><Home size={20} /> Inicio</a>
+                    <a href="#portafolio" onClick={() => setIsMenuOpen(false)} className="px-3 py-2 text-white hover:text-yellow-500 text-lg flex items-center gap-2"><Briefcase size={20} /> Portafolio</a>
+                    <a href="#contacto" onClick={() => setIsMenuOpen(false)} className="px-3 py-2 text-white hover:text-yellow-500 text-lg flex items-center gap-2"><Phone size={20} /> Contacto</a>
+                    <a href="https://www.instagram.com/visual_productions810/" target="_blank" rel="noreferrer" onClick={() => setIsMenuOpen(false)} className="px-3 py-2 text-white hover:text-yellow-500 text-lg flex items-center gap-2"><Clapperboard size={20} /> Agencia de Video</a>
+                    <a href={CONFIG.personal.blog} target="_blank" rel="noreferrer" onClick={() => setIsMenuOpen(false)} className="px-3 py-2 text-white hover:text-yellow-500 text-lg flex items-center gap-2"><BookOpen size={20} /> Blog Personal</a>
 
                     {/* Botón WhatsApp */}
                     <a
@@ -356,6 +462,22 @@ const SeccionPortafolio = () => {
     const [activeTab, setActiveTab] = useState('all');
     const [selectedVideo, setSelectedVideo] = useState(null);
 
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape') {
+                setSelectedVideo(null);
+            }
+        };
+
+        if (selectedVideo) {
+            window.addEventListener('keydown', handleKeyDown);
+        }
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [selectedVideo]);
+
     const todasLasCategorias = [
         { id: 'all', label: 'Todos' },
         { id: 'anuncios', label: 'Anuncios' },
@@ -368,21 +490,25 @@ const SeccionPortafolio = () => {
         cat.id === 'all' || CONFIG.trabajos.some(trabajo => trabajo.categoria === cat.id)
     );
 
-    const trabajosFiltrados = activeTab === 'all'
-        ? CONFIG.trabajos
-        : CONFIG.trabajos.filter(p => p.categoria === activeTab);
+    const trabajosFiltrados = (activeTab === 'all'
+        ? [...CONFIG.trabajos]
+        : CONFIG.trabajos.filter(p => p.categoria === activeTab))
+        .sort((a, b) => {
+            if (a.esNuevo === b.esNuevo) return 0;
+            return a.esNuevo ? -1 : 1;
+        });
 
     return (
         <section id="portafolio" className="py-24 px-4 relative">
             <div className="max-w-7xl mx-auto">
 
                 <RevealSection>
-                    <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 text-center md:text-left">
-                        <div className="w-full md:w-auto">
+                    <div className="flex flex-col lg:flex-row justify-between items-center lg:items-end mb-12 text-center lg:text-left">
+                        <div className="w-full lg:w-auto">
                             <h2 className="text-4xl font-bold mb-4">Mis <span className="text-yellow-500">Trabajos</span></h2>
                             <p className="text-gray-400">Una selección de mis mejores ediciones por categoría.</p>
                         </div>
-                        <div className="flex gap-2 mt-6 md:mt-0 overflow-x-auto pb-2 md:pb-0 w-full md:w-auto justify-center md:justify-end">
+                        <div className="flex flex-wrap gap-2 mt-6 lg:mt-0 w-full lg:w-auto justify-center lg:justify-end">
                             {categoriasVisibles.map((cat) => (
                                 <button
                                     key={cat.id}
@@ -405,13 +531,21 @@ const SeccionPortafolio = () => {
                                 className="group relative rounded-xl overflow-hidden aspect-square sm:aspect-video cursor-pointer border border-white/10 bg-gray-900 transition-all hover:border-yellow-500/50 hover:shadow-lg hover:shadow-yellow-500/10"
                             >
                                 <img src={trabajo.imagen} alt={trabajo.titulo} className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"></div>
-                                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <div className="w-16 h-16 bg-yellow-500/90 rounded-full flex items-center justify-center backdrop-blur-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-0"></div>
+
+                                {/* Etiqueta NUEVO */}
+                                {trabajo.esNuevo && (
+                                    <div className="absolute top-4 right-4 bg-yellow-500 text-black text-[10px] font-bold px-2 py-1 rounded-full z-10 transition-opacity duration-300 group-hover:opacity-0">
+                                        NUEVO
+                                    </div>
+                                )}
+
+                                <div className="absolute inset-0 flex items-end justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div className="w-16 h-16 bg-yellow-500/90 group-hover:bg-yellow-500/60 rounded-full flex items-center justify-center backdrop-blur-sm transform scale-50 group-hover:scale-100 transition-all duration-300 shadow-xl">
                                         <Play size={28} fill="black" className="ml-1 text-black" />
                                     </div>
                                 </div>
-                                <div className="absolute bottom-0 left-0 w-full p-6 translate-y-2 group-hover:translate-y-0 transition-transform">
+                                <div className="absolute bottom-0 left-0 w-full p-6 translate-y-2 group-hover:translate-y-0 transition-all duration-300 group-hover:opacity-0">
                                     <span className="text-xs font-bold px-2 py-1 bg-white/20 backdrop-blur-md rounded text-white uppercase tracking-wider mb-2 inline-block">
                                         {trabajo.categoria.replace('_', ' ')}
                                     </span>
@@ -432,10 +566,129 @@ const SeccionPortafolio = () => {
                         <X size={40} />
                     </button>
                     <div className={`relative w-full ${selectedVideo.esVertical ? 'max-w-[400px] aspect-[9/16]' : 'max-w-4xl aspect-video'} rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-black`}>
-                        <iframe src={selectedVideo.videoUrl} width="100%" height="100%" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen title="Video Player"></iframe>
+                        <iframe src={`${selectedVideo.videoUrl}?autoplay=1`} width="100%" height="100%" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen title="Video Player"></iframe>
                     </div>
                 </div>
             )}
+        </section>
+    );
+};
+
+// --- SECCIÓN TESTIMONIOS ---
+const SeccionTestimonios = () => {
+    return (
+        <section className="py-24 px-4 bg-black/50 relative overflow-hidden">
+            {/* Fondo decorativo sutil */}
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-yellow-900/10 via-black to-black pointer-events-none"></div>
+
+            <div className="max-w-7xl mx-auto relative z-10">
+                <RevealSection>
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-5xl font-bold mb-4">Lo que dicen <span className="text-yellow-500">mis clientes</span></h2>
+                        <p className="text-gray-400 max-w-2xl mx-auto">
+                            Resultados reales de personas que han confiado en mi trabajo para potenciar su contenido.
+                        </p>
+                    </div>
+                </RevealSection>
+
+                {/* Contenedor Slider en Móvil / Grid en Desktop */}
+                <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 md:grid md:grid-cols-3 md:gap-8 md:pb-0 hide-scrollbar">
+                    {CONFIG.testimonios.map((testimonio, index) => (
+                        <RevealSection key={testimonio.id} className={`delay-${index * 100} h-full min-w-[85%] sm:min-w-[350px] md:min-w-0 snap-center`}>
+                            <div className="h-full p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-yellow-500/30 transition-all duration-300 flex flex-col items-center text-center group hover:bg-white/10">
+
+                                {/* Foto de Perfil */}
+                                <div className="mb-6 relative">
+                                    <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-yellow-500/50 p-1 shadow-lg shadow-yellow-500/10 group-hover:scale-105 transition-transform duration-300">
+                                        <img
+                                            src={testimonio.foto}
+                                            alt={testimonio.nombre}
+                                            className="w-full h-full rounded-full object-cover"
+                                        />
+                                    </div>
+                                    <div className="absolute -bottom-2 -right-2 bg-yellow-500 text-black p-1.5 rounded-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" /></svg>
+                                    </div>
+                                </div>
+
+                                {/* Nombre y Rol */}
+                                <h3 className="text-xl font-bold text-white mb-1">{testimonio.nombre}</h3>
+                                {testimonio.rol && <p className="text-xs text-yellow-500 uppercase tracking-widest font-bold mb-2">{testimonio.rol}</p>}
+
+                                {/* Instagram Link Component */}
+                                <InstagramLink url={testimonio.instagram} />
+
+                                {/* Estrellas */}
+                                <div className="flex gap-1 mb-6">
+                                    {[...Array(5)].map((_, i) => (
+                                        <Star key={i} size={16} className="fill-yellow-500 text-yellow-500" />
+                                    ))}
+                                </div>
+
+                                {/* Reseña */}
+                                <p className="text-gray-300 italic leading-relaxed text-sm">
+                                    "{testimonio.texto}"
+                                </p>
+                            </div>
+                        </RevealSection>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
+
+// --- SECCIÓN FAQ (PREGUNTAS FRECUENTES) ---
+const SeccionFAQ = () => {
+    const [openIndex, setOpenIndex] = useState(null);
+
+    const toggleFAQ = (index) => {
+        setOpenIndex(openIndex === index ? null : index);
+    };
+
+    return (
+        <section className="py-24 px-4 relative">
+            <div className="max-w-3xl mx-auto">
+                <RevealSection>
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-5xl font-bold mb-4">Preguntas <span className="text-yellow-500">Frecuentes</span></h2>
+                        <p className="text-gray-400">Todo lo que necesitas saber antes de empezar.</p>
+                    </div>
+                </RevealSection>
+
+                <div className="space-y-4">
+                    {CONFIG.faq.map((item, index) => (
+                        <RevealSection key={item.id} className={`delay-${index * 100}`}>
+                            <div
+                                className={`border border-white/10 rounded-xl overflow-hidden transition-all duration-300 ${openIndex === index ? 'bg-white/10 border-yellow-500/30' : 'bg-white/5 hover:bg-white/10'
+                                    }`}
+                            >
+                                <button
+                                    onClick={() => toggleFAQ(index)}
+                                    className="w-full px-6 py-4 flex justify-between items-center text-left focus:outline-none"
+                                >
+                                    <span className={`font-bold text-lg ${openIndex === index ? 'text-yellow-500' : 'text-white'}`}>
+                                        {item.pregunta}
+                                    </span>
+                                    {openIndex === index ? (
+                                        <ChevronUp className="text-yellow-500" />
+                                    ) : (
+                                        <ChevronDown className="text-gray-400" />
+                                    )}
+                                </button>
+                                <div
+                                    className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-40 py-4 opacity-100' : 'max-h-0 py-0 opacity-0'
+                                        }`}
+                                >
+                                    <p className="text-gray-300 leading-relaxed">
+                                        {item.respuesta}
+                                    </p>
+                                </div>
+                            </div>
+                        </RevealSection>
+                    ))}
+                </div>
+            </div>
         </section>
     );
 };
@@ -556,12 +809,18 @@ const App = () => {
                 ::-webkit-scrollbar-track { background: #000; }
                 ::-webkit-scrollbar-thumb { background: #444; border-radius: 4px; }
                 ::-webkit-scrollbar-thumb:hover { background: #b38728; }
+                
+                /* Ocultar scrollbar para el slider de testimonios */
+                .hide-scrollbar::-webkit-scrollbar { display: none; }
+                .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
             `}</style>
 
             <BarraNavegacion />
             <SeccionHero />
             <SeccionHerramientas />
             <SeccionPortafolio />
+            <SeccionTestimonios />
+            <SeccionFAQ />
             <SeccionContacto />
         </div>
     );
