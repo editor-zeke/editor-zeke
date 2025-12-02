@@ -167,7 +167,7 @@ const CONFIG = {
             texto: "muy bueno",
             instagram: "https://www.instagram.com/_gopassport/" // Pega aquí el link de Instagram
         },
-        
+
     ],
     // --- PREGUNTAS FRECUENTES (FAQ) ---
     faq: [
@@ -591,10 +591,10 @@ const SeccionTestimonios = () => {
                     </div>
                 </RevealSection>
 
-                {/* Contenedor Slider en Móvil / Grid en Desktop */}
-                <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 md:grid md:grid-cols-3 md:gap-8 md:pb-0 hide-scrollbar">
+                {/* Contenedor Slider en Móvil / Grid en Desktop -> AHORA: Flex Wrap Centrado */}
+                <div className="flex flex-wrap justify-center gap-6 md:gap-8">
                     {CONFIG.testimonios.map((testimonio, index) => (
-                        <RevealSection key={testimonio.id} className={`delay-${index * 100} h-full min-w-[85%] sm:min-w-[350px] md:min-w-0 snap-center`}>
+                        <RevealSection key={testimonio.id} className={`delay-${index * 100} h-full w-full sm:w-[350px]`}>
                             <div className="h-full p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-yellow-500/30 transition-all duration-300 flex flex-col items-center text-center group hover:bg-white/10">
 
                                 {/* Foto de Perfil */}
@@ -753,7 +753,7 @@ const SeccionContacto = () => {
                             </div>
                             <div className="text-left">
                                 <p className="text-xs text-gray-500 uppercase tracking-widest">Email</p>
-                                <p className="text-lg font-bold text-white break-all">{CONFIG.personal.email}</p>
+                                <p className="text-sm sm:text-lg font-bold text-white whitespace-nowrap">{CONFIG.personal.email}</p>
                             </div>
                         </a>
                     </div>
