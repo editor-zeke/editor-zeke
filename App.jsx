@@ -34,7 +34,7 @@ const CONFIG = {
     // --- TEXTOS DE LA PORTADA ---
     textos: {
         tituloPrincipal: "Transformo Vistas en Resultados Reales",
-        subtitulo: "No solo edito videos, creo activos estratégicos diseñados para retener audiencia y convertir espectadores en clientes fieles.",
+        subtitulo: "Más que edición: creo elementos visuales diseñados para retener la atención y transformar espectadores en clientes.",
     },
 
     // --- TUS HERRAMIENTAS (LOGOS) ---
@@ -78,7 +78,7 @@ const CONFIG = {
             id: 9,
             titulo: "Jetcars 🌊",
             categoria: "anuncios",
-            imagen: "../img/jetcars.webp",
+            imagen: "/img/jetcars.webp",
             vistas: "1k+ Vistas",
             videoUrl: "https://player.vimeo.com/video/1141748076",
             esVertical: true,
@@ -88,7 +88,7 @@ const CONFIG = {
             id: 1,
             titulo: "Chilli Restaurant",
             categoria: "anuncios",
-            imagen: "../img/chilishack.webp",
+            imagen: "/img/Chilishack.webp",
             vistas: "200k+ Vistas",
             videoUrl: "https://player.vimeo.com/video/1141238978",
             esVertical: true, // Ejemplo: Este se verá alto en el celular
@@ -98,7 +98,7 @@ const CONFIG = {
             id: 2,
             titulo: "Maleta o mochila",
             categoria: "blogs",
-            imagen: "../img/maleta-mochi.webp",
+            imagen: "/img/maleta-mochi.webp",
             vistas: "500+ Vistas",
             videoUrl: "https://player.vimeo.com/video/1136235770",
             esVertical: true,
@@ -107,7 +107,7 @@ const CONFIG = {
             id: 3,
             titulo: "Esenciales de Viaje",
             categoria: "blogs",
-            imagen: "../img/esenciales.webp",
+            imagen: "/img/Esenciales.webp",
             vistas: "700+ Vistas",
             videoUrl: "https://player.vimeo.com/video/1136235862",
             esVertical: true
@@ -116,7 +116,7 @@ const CONFIG = {
             id: 4,
             titulo: "3 Cosas que debes tener listo",
             categoria: "marca_personal",
-            imagen: "../img/3 cosas.webp",
+            imagen: "/img/3 cosas.webp",
             vistas: "105+ Vistas",
             esVertical: true,
             videoUrl: "https://player.vimeo.com/video/1130355484"
@@ -125,7 +125,7 @@ const CONFIG = {
             id: 5,
             titulo: "Estabilidad VS Libertad",
             categoria: "marca_personal",
-            imagen: "../img/Estabilidad Libertad.webp",
+            imagen: "/img/Estabilidad Libertad.webp",
             vistas: "120k Vistas",
             esVertical: true,
             videoUrl: "https://player.vimeo.com/video/1120273287"
@@ -134,7 +134,7 @@ const CONFIG = {
             id: 6,
             titulo: "Como conseguir clientes?",
             categoria: "videos_largos",
-            imagen: "../img/Clientes.webp",
+            imagen: "/img/Clientes.webp",
             vistas: "300k Vistas",
             videoUrl: "https://player.vimeo.com/video/1118611689"
         },
@@ -142,7 +142,7 @@ const CONFIG = {
             id: 7,
             titulo: "Un diploma vale menos que saber vender",
             categoria: "marca_personal",
-            imagen: "../img/Diploma.webp",
+            imagen: "/img/Diploma.webp",
             vistas: "300k Vistas",
             videoUrl: "https://player.vimeo.com/video/1120256955",
             esVertical: true,
@@ -151,7 +151,7 @@ const CONFIG = {
             id: 8,
             titulo: "My experiencia en el Babaro Palas",
             categoria: "blogs",
-            imagen: "../img/Babaro Palas.webp",
+            imagen: "/img/Babaro Palas.webp",
             vistas: "1k+ Vistas",
             videoUrl: "https://player.vimeo.com/video/1118613666",
             esVertical: true,
@@ -163,7 +163,7 @@ const CONFIG = {
             id: 1,
             nombre: "Nathanael Santiago Vasquez",
             rol: "Influencer de Viajes",
-            foto: "../img/tes-natha.webp",
+            foto: "/img/tes-natha.webp",
             texto: "Trabajar con Ezequiel ha sido un cambio total para mi contenido. Su edición no solo es técnica, sino que entiende perfectamente la narrativa de mis viajes y gracias a eso mis resultados han mejorado enormemente.",
             instagram: "https://www.instagram.com/_gopassport/" // Pega aquí el link de Instagram
         },
