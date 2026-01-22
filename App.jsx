@@ -89,7 +89,7 @@ const CONFIG = {
             categoria: "marca_personal",
             imagen: "/img/3pioneras.webp",
             vistas: "700+ Vistas",
-            videoUrl: "https://player.vimeo.com/video/1136235862",
+            videoUrl: "https://player.vimeo.com/video/1157043890",
             esVertical: true
         },
         {
@@ -99,8 +99,9 @@ const CONFIG = {
             imagen: "/img/editing programs.webp",
             vistas: "105+ Vistas",
             esVertical: true,
-            videoUrl: "https://vimeo.com/1157042955?share=copy&fl=sv&fe=ci",
+            videoUrl: "https://player.vimeo.com/video/1157042955",
             esNuevo: true
+            
         },
         {
             id: 6,
