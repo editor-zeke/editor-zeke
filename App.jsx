@@ -75,16 +75,6 @@ const CONFIG = {
     -------------------------------------------------------------------------- */
     trabajos: [
         {
-            id: 9,
-            titulo: "Jetcars 🌊",
-            categoria: "anuncios",
-            imagen: "/img/jetcars.webp",
-            vistas: "1k+ Vistas",
-            videoUrl: "https://player.vimeo.com/video/1141748076",
-            esVertical: true,
-            esNuevo: true
-        },
-        {
             id: 1,
             titulo: "Chilli Restaurant",
             categoria: "anuncios",
@@ -92,43 +82,25 @@ const CONFIG = {
             vistas: "200k+ Vistas",
             videoUrl: "https://player.vimeo.com/video/1141238978",
             esVertical: true, // Ejemplo: Este se verá alto en el celular
-            esNuevo: true
-        },
-        {
-            id: 2,
-            titulo: "Maleta o mochila",
-            categoria: "blogs",
-            imagen: "/img/maleta-mochi.webp",
-            vistas: "500+ Vistas",
-            videoUrl: "https://player.vimeo.com/video/1136235770",
-            esVertical: true,
         },
         {
             id: 3,
-            titulo: "Esenciales de Viaje",
-            categoria: "blogs",
-            imagen: "/img/Esenciales.webp",
+            titulo: "¿Cómo destacar en la música?",
+            categoria: "marca_personal",
+            imagen: "/img/3pioneras.webp",
             vistas: "700+ Vistas",
             videoUrl: "https://player.vimeo.com/video/1136235862",
             esVertical: true
         },
         {
             id: 4,
-            titulo: "3 Cosas que debes tener listo",
+            titulo: "Iman Gadzi editing style",
             categoria: "marca_personal",
-            imagen: "/img/3 cosas.webp",
+            imagen: "/img/editing programs.webp",
             vistas: "105+ Vistas",
             esVertical: true,
-            videoUrl: "https://player.vimeo.com/video/1130355484"
-        },
-        {
-            id: 5,
-            titulo: "Estabilidad VS Libertad",
-            categoria: "marca_personal",
-            imagen: "/img/Estabilidad Libertad.webp",
-            vistas: "120k Vistas",
-            esVertical: true,
-            videoUrl: "https://player.vimeo.com/video/1120273287"
+            videoUrl: "https://vimeo.com/1157042955?share=copy&fl=sv&fe=ci",
+            esNuevo: true
         },
         {
             id: 6,
@@ -137,24 +109,6 @@ const CONFIG = {
             imagen: "/img/Clientes.webp",
             vistas: "300k Vistas",
             videoUrl: "https://player.vimeo.com/video/1118611689"
-        },
-        {
-            id: 7,
-            titulo: "Un diploma vale menos que saber vender",
-            categoria: "marca_personal",
-            imagen: "/img/Diploma.webp",
-            vistas: "300k Vistas",
-            videoUrl: "https://player.vimeo.com/video/1120256955",
-            esVertical: true,
-        },
-        {
-            id: 8,
-            titulo: "My experiencia en el Babaro Palas",
-            categoria: "blogs",
-            imagen: "/img/Babaro Palas.webp",
-            vistas: "1k+ Vistas",
-            videoUrl: "https://player.vimeo.com/video/1118613666",
-            esVertical: true,
         }
     ],
     // --- TESTIMONIOS ---
@@ -550,9 +504,7 @@ const SeccionPortafolio = () => {
                                         {trabajo.categoria.replace('_', ' ')}
                                     </span>
                                     <h3 className="text-xl font-bold text-white mb-1 leading-tight">{trabajo.titulo}</h3>
-                                    <p className="text-yellow-400 text-sm font-medium flex items-center gap-1">
-                                        <Monitor size={14} /> {trabajo.vistas}
-                                    </p>
+
                                 </div>
                             </div>
                         </RevealSection>
